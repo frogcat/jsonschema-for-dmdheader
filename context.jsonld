@@ -1,0 +1,112 @@
+{
+  "@context": {
+
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dmd": "http://imi.go.jp/ns/dmd#",
+    "schema": "http://schema.org/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+
+    "Asset": {
+      "@id": "adms:Asset"
+    },
+    "AssetDistribution": {
+      "@id": "adms:AssetDistribution"
+    },
+    "DataModelDescription": {
+      "@id": "dmd:DataModelDescription"
+    },
+    "DataModel": {
+      "@id": "dmd:DataModelDescription"
+    },
+    "Header": {
+      "@id": "dmd:Header"
+    },
+    "XMLSchema": {
+      "@id": "dmd:XMLSchema"
+    },
+    "XMLRedefineSchema": {
+      "@id": "dmd:XMLRedefineSchema"
+    },
+    "RDFDataShape": {
+      "@id": "dmd:RDFDataShape"
+    },
+    "ItemData": {
+      "@id": "dmd:ItemData"
+    },
+    "Documentation": {
+      "@id": "dmd:Documentation"
+    },
+    "Sample": {
+      "@id": "dmd:Sample"
+    },
+    "Mapping": {
+      "@id": "dmd:Mapping"
+    },
+    "type": {
+      "@id": "dcterms:type",
+      "@type": "@id"
+    },
+    "issued": {
+      "@id": "dcterms:issued",
+      "@type": "xsd:date"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:date"
+    },
+    "title": {
+      "@id": "dcterms:title",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "dcterms:description",
+      "@type": "xsd:string"
+    },
+    "publisher": {
+      "@id": "dcterms:publisher",
+      "@type": "@id"
+    },
+    "name": {
+      "@id": "foaf:name",
+      "@type": "xsd:string"
+    },
+    "page": {
+      "@id": "foaf:page",
+      "@type": "@id"
+    },
+    "homepage": {
+      "@id": "foaf:homepage",
+      "@type": "@id"
+    },
+    "license": {
+      "@id": "dcterms:license",
+      "@type": "@id"
+    },
+    "prev": {
+      "@id": "adms:prev",
+      "@type": "@id"
+    },
+    "last": {
+      "@id": "adms:last",
+      "@type": "@id"
+    },
+    "charCollection": {
+      "@id": "dmd:charCollection",
+      "@type": "xsd:integer"
+    },
+    "distribution": {
+      "@id": "dcat:distribution",
+      "@type": "@id"
+    },
+    "versionInfo": {
+      "@id": "owl:versionInfo",
+      "@type": "xsd:string"
+    }
+  }
+}

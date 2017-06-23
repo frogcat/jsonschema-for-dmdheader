@@ -1,0 +1,15 @@
+{
+  "name": "jsonschema-for-dmdheader",
+  "version": "1.0.0",
+  "description": "JSON Schema for DMD Header",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "frogcat",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "jsonschema": "^1.1.1",
+    "mocha": "^3.4.2"
+  }
+}

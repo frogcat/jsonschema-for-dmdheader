@@ -1,0 +1,181 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "_langstring": {
+      "oneOf": [{
+        "type": "string"
+      }, {
+        "type": "object",
+        "properties": {
+          "@value": {
+            "type": "string"
+          },
+          "@language": {
+            "type": "string"
+          }
+        },
+        "required": ["@value"]
+      }]
+    },
+    "langstring": {
+      "oneOf": [{
+        "$ref": "#/definitions/_langstring"
+      }, {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/_langstring"
+        },
+        "minItems": 1
+      }]
+    },
+    "_distribution": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "enum": ["AssetDistribution"]
+        },
+        "type": {
+          "enum": ["Header", "Mapping", "DataModel", "Document", "Sample"]
+        },
+        "description": {
+          "$ref": "#/definitions/langstring"
+        },
+        "license": {
+          "$ref": "#/definitions/license"
+        }
+      },
+      "additionalProperties": true,
+      "required": ["@id", "type"]
+    },
+    "distribution": {
+      "oneOf": [{
+        "$ref": "#/definitions/_distribution"
+      }, {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/_distribution"
+        },
+        "minItems": 1
+      }]
+    },
+    "_license": {
+      "oneOf": [{
+        "type": "string"
+      }, {
+        "type": "object",
+        "properties": {
+          "@id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/definitions/langstring"
+          },
+          "description": {
+            "$ref": "#/definitions/langstring"
+          }
+        }
+      }]
+    },
+    "license": {
+      "oneOf": [{
+        "$ref": "#/definitions/_license"
+      }, {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/_license"
+        },
+        "minItems": 1
+      }]
+    },
+    "_publisher": {
+      "oneOf": [{
+        "type": "string"
+      }, {
+        "type": "object",
+        "properties": {
+          "@id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/definitions/langstring"
+          },
+          "description": {
+            "$ref": "#/definitions/langstring"
+          }
+        }
+      }]
+    },
+    "publisher": {
+      "oneOf": [{
+        "$ref": "#/definitions/_publisher"
+      }, {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/_publisher"
+        },
+        "minItems": 1
+      }]
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*-[01][0-9]-[0123][0-9]$"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "@context": {
+      "enum": ["http://imi.go.jp/ns/dmd/context.jsonld"]
+    },
+    "@type": {
+      "enum": ["Asset"]
+    },
+    "@id": {
+      "type": "string",
+      "format": "uri"
+    },
+    "type": {
+      "enum": ["DataModelDescription"]
+    },
+    "issued": {
+      "$ref": "#/definitions/date"
+    },
+    "modified": {
+      "$ref": "#/definitions/date"
+    },
+    "title": {
+      "$ref": "#/definitions/langstring"
+    },
+    "description": {
+      "$ref": "#/definitions/langstring"
+    },
+    "prev": {
+      "type": "string"
+    },
+    "last": {
+      "type": "string"
+    },
+    "versionInfo": {
+      "type": "string"
+    },
+    "charCollection": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "publisher": {
+      "$ref": "#/definitions/publisher"
+    },
+    "license": {
+      "$ref": "#/definitions/license"
+    },
+    "distribution": {
+      "$ref": "#/definitions/distribution"
+    }
+  },
+  "additionalProperties": true,
+  "required": ["@context", "@type", "type", "@id", "title", "description", "versionInfo", "publisher", "license", "distribution"]
+}

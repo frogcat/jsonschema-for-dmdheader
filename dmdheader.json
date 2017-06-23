@@ -1,0 +1,26 @@
+{
+  "@context": "http://imi.go.jp/ns/dmd/context.jsonld",
+  "@id": "http://example.org/",
+  "@type": "Asset",
+  "type": "DataModelDescription",
+  "issued": "2017-06-22",
+  "modified": "2017-06-22",
+  "title": "title",
+  "descripton": "description",
+  "publisher": ["http://example.org/", {
+    "@id": "http://example.org/",
+    "name": "IPA"
+  }],
+  "license": "http://example.org/",
+  "prev": "http://example.org/",
+  "last": "http://example.org/",
+  "versionInfo": "1.0.0",
+  "charCollection": [1, 2, 3],
+  "distribution": [{
+    "@id": "header.json",
+    "@type": "AssetDistribution",
+    "type": "Header",
+    "description": "description",
+    "license": "http://example.org/"
+  }]
+}
