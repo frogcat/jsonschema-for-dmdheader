@@ -1,6 +1,6 @@
 {
   "@context": {
-
+    "id": "@id",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -11,12 +11,17 @@
     "dmd": "http://imi.go.jp/ns/dmd#",
     "schema": "http://schema.org/",
     "foaf": "http://xmlns.com/foaf/0.1/",
-
     "Asset": {
       "@id": "adms:Asset"
     },
     "AssetDistribution": {
       "@id": "adms:AssetDistribution"
+    },
+    "Agent": {
+      "@id": "foaf:Agent"
+    },
+    "LicenseDocument": {
+      "@id": "dcterms:LicenseDocument"
     },
     "DataModelDescription": {
       "@id": "dmd:DataModelDescription"
@@ -27,20 +32,8 @@
     "Header": {
       "@id": "dmd:Header"
     },
-    "XMLSchema": {
-      "@id": "dmd:XMLSchema"
-    },
-    "XMLRedefineSchema": {
-      "@id": "dmd:XMLRedefineSchema"
-    },
-    "RDFDataShape": {
-      "@id": "dmd:RDFDataShape"
-    },
-    "ItemData": {
-      "@id": "dmd:ItemData"
-    },
-    "Documentation": {
-      "@id": "dmd:Documentation"
+    "Document": {
+      "@id": "dmd:Document"
     },
     "Sample": {
       "@id": "dmd:Sample"
@@ -52,6 +45,10 @@
       "@id": "dcterms:type",
       "@type": "@id"
     },
+    "created": {
+      "@id": "dcterms:created",
+      "@type": "xsd:date"
+    },
     "issued": {
       "@id": "dcterms:issued",
       "@type": "xsd:date"
@@ -62,19 +59,35 @@
     },
     "title": {
       "@id": "dcterms:title",
-      "@type": "xsd:string"
+      "@language": "ja"
+    },
+    "title_en": {
+      "@id": "dcterms:title",
+      "@language": "en"
     },
     "description": {
       "@id": "dcterms:description",
-      "@type": "xsd:string"
+      "@language": "ja"
+    },
+    "description_en": {
+      "@id": "dcterms:description",
+      "@language": "en"
     },
     "publisher": {
       "@id": "dcterms:publisher",
       "@type": "@id"
     },
+    "creator": {
+      "@id": "dcterms:creator",
+      "@type": "@id"
+    },
     "name": {
       "@id": "foaf:name",
-      "@type": "xsd:string"
+      "@language": "ja"
+    },
+    "name_en": {
+      "@id": "foaf:name",
+      "@language": "en"
     },
     "page": {
       "@id": "foaf:page",
@@ -88,25 +101,12 @@
       "@id": "dcterms:license",
       "@type": "@id"
     },
-    "prev": {
-      "@id": "adms:prev",
-      "@type": "@id"
-    },
-    "last": {
-      "@id": "adms:last",
-      "@type": "@id"
-    },
-    "charCollection": {
-      "@id": "dmd:charCollection",
-      "@type": "xsd:integer"
-    },
     "distribution": {
       "@id": "dcat:distribution",
       "@type": "@id"
     },
     "versionInfo": {
-      "@id": "owl:versionInfo",
-      "@type": "xsd:string"
+      "@id": "owl:versionInfo"
     }
   }
 }

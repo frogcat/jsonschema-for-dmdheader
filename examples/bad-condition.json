@@ -1,0 +1,24 @@
+{
+  "@context": "http://imi.go.jp/ns/dmd/context.jsonld",
+  "id": "http://example.org/dmd/016713423",
+  "type": "DataModelDescription",
+  "created": "2017-02-10",
+  "title": "小学校一覧のデータモデル",
+  "description": "小学校一覧のデータモデルを定義した DMD 一式です",
+  "creator": [{
+    "homepage": "http://example.org/"
+  }, {}],
+  "license": [{
+    "page": "http://creativecommons.org/licenses/by/4.0/"
+  }, {}],
+  "distribution": [{
+    "id": "header.jsonld",
+    "type": "Header"
+  }, {
+    "id": "datamodel.txt",
+    "type": "DataModel"
+  }, {
+    "id": "mapping.json",
+    "type": "Mapping"
+  }]
+}
